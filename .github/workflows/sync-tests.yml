@@ -17,8 +17,6 @@ jobs:
           - DynamicPageList3
           - PortableInfobox
           - ArticleComments
-        branch:
-          - master
 
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +32,7 @@ jobs:
           dst_path: .github/workflows/mediawiki-tests.yml
           dst_owner: Universal-Omega
           dst_repo_name: ${{ matrix.repository }}
-          dst_branch: ${{ matrix.branch }}
+          dst_branch: master
           commit_message: |
             Update workflow
 
