@@ -14,7 +14,6 @@ jobs:
           - SimpleTooltip
           - Monaco
           - FancyBoxThumbs
-          - DynamicPageList3
           - PortableInfobox
           - ArticleComments
 
