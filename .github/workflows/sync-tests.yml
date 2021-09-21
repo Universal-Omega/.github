@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - workflow-templates/.github/workflows/mediawiki-tests.yml
+      - workflow-templates/.github/.gitattributes
       - .github/workflows/sync-tests.yml
 
 jobs:
@@ -22,7 +23,7 @@ jobs:
       - run: |
           echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
           echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
-      - name: Copycat
+      - name: Copy workflow
         uses: andstor/copycat-action@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
@@ -34,5 +35,20 @@ jobs:
           dst_branch: master
           commit_message: |
             Update workflow
+
+            from ${{ env.GITHUB_REPOSITORY }} (https://github.com/${{ env.GITHUB_REPOSITORY }}/commit/${{ env.GITHUB_SHA }})
+
+      - name: Copy .gitattributes
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_path: workflow-templates/.gitattributes
+          src_branch: master
+          dst_path: .gitattributes
+          dst_owner: Universal-Omega
+          dst_repo_name: ${{ matrix.repository }}
+          dst_branch: master
+          commit_message: |
+            Update .gitattributes
 
             from ${{ env.GITHUB_REPOSITORY }} (https://github.com/${{ env.GITHUB_REPOSITORY }}/commit/${{ env.GITHUB_SHA }})
