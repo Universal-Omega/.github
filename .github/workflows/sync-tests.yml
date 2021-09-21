@@ -16,6 +16,7 @@ jobs:
           - FancyBoxThumbs
           - PortableInfobox
           - ArticleComments
+#         - DynamicPageList3
 
     runs-on: ubuntu-latest
     steps:
