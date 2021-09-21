@@ -44,7 +44,7 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           src_path: workflow-templates/.gitattributes
           src_branch: master
-          dst_path: .gitattributes
+          dst_path: /.gitattributes
           dst_owner: Universal-Omega
           dst_repo_name: ${{ matrix.repository }}
           dst_branch: master
