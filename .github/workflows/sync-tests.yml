@@ -39,7 +39,7 @@ jobs:
             from ${{ env.GITHUB_REPOSITORY }} (https://github.com/${{ env.GITHUB_REPOSITORY }}/commit/${{ env.GITHUB_SHA }})
 
       - name: Copy .gitattributes
-      - run: rm -rf .github
+        run: rm -rf .github
         uses: andstor/copycat-action@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
