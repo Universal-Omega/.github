@@ -2,7 +2,6 @@ on:
   push:
     paths:
       - workflow-templates/.github/workflows/mediawiki-tests.yml
-      - .github/workflows/sync-tests.yml
 
 jobs:
   copy:
@@ -16,7 +15,7 @@ jobs:
           - FancyBoxThumbs
           - PortableInfobox
           - ArticleComments
-#         - DynamicPageList3
+          - DynamicPageList3
 
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +31,7 @@ jobs:
           dst_path: .github/workflows/mediawiki-tests.yml
           dst_owner: Universal-Omega
           dst_repo_name: ${{ matrix.repository }}
-          dst_branch: master
+          dst_branch: update-ci
           commit_message: |
             Update workflow
 
