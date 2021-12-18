@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - workflow-templates/.github/workflows/mediawiki-tests.yml
+      - .github/workflows/sync-tests.yml
 
 jobs:
   copy:
@@ -16,6 +17,7 @@ jobs:
           - PortableInfobox
           - ArticleComments
           - DynamicPageList3
+          - Preloader
 
     runs-on: ubuntu-latest
     steps:
