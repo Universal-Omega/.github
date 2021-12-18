@@ -17,6 +17,7 @@ jobs:
           - PortableInfobox
           - ArticleComments
           - DynamicPageList3
+          - DiscordNotifications
           - Preloader
 
     runs-on: ubuntu-latest
