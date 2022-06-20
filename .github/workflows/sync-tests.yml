@@ -13,7 +13,6 @@ jobs:
           - SimpleBlogPage
           - SimpleTooltip
           - Monaco
-          - FancyBoxThumbs
           - PortableInfobox
           - ArticleComments
           - DiscordNotifications
