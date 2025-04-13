@@ -1,5 +1,6 @@
 on:
   push:
+    branches: [ main ]
     paths:
       - workflow-templates/action.yml
       - .github/workflows/sync-tests.yml
@@ -15,7 +16,6 @@ jobs:
           - Monaco
           - PortableInfobox
           - ArticleComments
-          - DiscordNotifications
           - Preloader
 
     runs-on: ubuntu-latest
@@ -28,11 +28,11 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           src_path: workflow-templates/action.yml
-          src_branch: master
+          src_branch: main
           dst_path: .github/workflows/mediawiki-tests.yml
           dst_owner: Universal-Omega
           dst_repo_name: ${{ matrix.repository }}
-          dst_branch: master
+          dst_branch: main
           commit_message: |
             Update workflow
 
